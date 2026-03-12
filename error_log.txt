@@ -1,0 +1,1103 @@
+[31m[[1m +130 ms[22m] [1mFAILURE: Build failed with an exception.[22m[39m
+[31m[  +11 ms] [1m* Where:[22m[39m
+[31m[        ] [1mSettings file 'D:\Projects\skin_cancer_app\android\settings.gradle.kts'[39m
+[31mline: ??[22m[39m
+[31m[        ] [1m* What went wrong:[22m[39m
+[31m[        ] [1mError resolving plugin [id: 'dev.flutter.flutter-plugin-loader',[39m
+[31mversion: '1.0.0'][22m[39m
+[31m[        ] [1m> Build was configured to prefer settings repositories over project[39m
+[31mrepositories but repository 'maven' was added by settings file[39m
+[31m'settings.gradle.kts'[22m[39m
+[31m[        ] [1m* Try:[22m[39m
+[31m[        ] [1m> Run with --debug option to get more log output.[22m[39m
+[31m[        ] [1m> Run with --scan to get full insights.[22m[39m
+[31m[        ] [1m> Get more help at https://help.gradle.org.[22m[39m
+[31m[        ] [1m* Exception is:[22m[39m
+[31m[        ] [1morg.gradle.api.GradleException: Error resolving plugin [id:[39m
+[31m'dev.flutter.flutter-plugin-loader', version: '1.0.0'][22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.plugin.use.internal.DefaultPluginRequestApplicator.resolvePluginRequest([39m
+[31mDefaultPluginRequestApplicator.java:188)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.plugin.use.internal.DefaultPluginRequestApplicator.applyPlugins(DefaultP[39m
+[31mluginRequestApplicator.java:97)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.kotlin.dsl.provider.PluginRequestsHandler.handle(PluginRequestsHandler.k[39m
+[31mt:45)[22m[39m
+[31m[   +1 ms] [1m	at[39m
+[31morg.gradle.kotlin.dsl.provider.StandardKotlinScriptEvaluator$InterpreterHost.applyP[39m
+[31mluginsTo(KotlinScriptEvaluator.kt:219)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.kotlin.dsl.execution.Interpreter$ProgramHost.applyPluginsTo(Interpreter.[39m
+[31mkt:385)[22m[39m
+[31m[        ] [1m	at Program.execute(Unknown Source)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.kotlin.dsl.execution.Interpreter$ProgramHost.eval(Interpreter.kt:514)[22m[39m
+[31m[        ] [1m	at org.gradle.kotlin.dsl.execution.Interpreter.eval(Interpreter.kt:193)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.kotlin.dsl.provider.StandardKotlinScriptEvaluator.evaluate(KotlinScriptE[39m
+[31mvaluator.kt:124)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.kotlin.dsl.provider.KotlinScriptPluginFactory$create$1.invoke(KotlinScri[39m
+[31mptPluginFactory.kt:51)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.kotlin.dsl.provider.KotlinScriptPluginFactory$create$1.invoke(KotlinScri[39m
+[31mptPluginFactory.kt:48)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.kotlin.dsl.provider.KotlinScriptPlugin.apply(KotlinScriptPlugin.kt:35)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.configuration.BuildOperationScriptPlugin$1.run(BuildOperationScriptPlugi[39m
+[31mn.java:68)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(DefaultBuildOp[39m
+[31merationRunner.java:29)[22m[39m
+[31m[  +12 ms] [1m	at[39m
+[31morg.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(DefaultBuildOp[39m
+[31merationRunner.java:26)[22m[39m
+[31m[   +1 ms] [1m	at[39m
+[31morg.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOp[39m
+[31merationRunner.java:66)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOp[39m
+[31merationRunner.java:59)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOper[39m
+[31mationRunner.java:166)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOper[39m
+[31mationRunner.java:59)[22m[39m
+[31m[   +4 ms] [1m	at[39m
+[31morg.gradle.internal.operations.DefaultBuildOperationRunner.run(DefaultBuildOperatio[39m
+[31mnRunner.java:47)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.configuration.BuildOperationScriptPlugin.lambda$apply$0(BuildOperationSc[39m
+[31mriptPlugin.java:65)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.code.DefaultUserCodeApplicationContext.apply(DefaultUserCodeApp[39m
+[31mlicationContext.java:44)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.configuration.BuildOperationScriptPlugin.apply(BuildOperationScriptPlugi[39m
+[31mn.java:65)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.initialization.ScriptEvaluatingSettingsProcessor.applySettingsScript(Scr[39m
+[31miptEvaluatingSettingsProcessor.java:75)[22m[39m
+[31m[   +1 ms] [1m	at[39m
+[31morg.gradle.initialization.ScriptEvaluatingSettingsProcessor.process(ScriptEvaluatin[39m
+[31mgSettingsProcessor.java:68)[22m[39m
+[31m[   +1 ms] [1m	at[39m
+[31morg.gradle.initialization.SettingsEvaluatedCallbackFiringSettingsProcessor.process([39m
+[31mSettingsEvaluatedCallbackFiringSettingsProcessor.java:34)[22m[39m
+[31m[   +1 ms] [1m	at[39m
+[31morg.gradle.initialization.RootBuildCacheControllerSettingsProcessor.process(RootBui[39m
+[31mldCacheControllerSettingsProcessor.java:47)[22m[39m
+[31m[  +46 ms] [1m	at[39m
+[31morg.gradle.initialization.BuildOperationSettingsProcessor$2.call(BuildOperationSett[39m
+[31mingsProcessor.java:49)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.initialization.BuildOperationSettingsProcessor$2.call(BuildOperationSett[39m
+[31mingsProcessor.java:46)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWo[39m
+[31mrker.execute(DefaultBuildOperationRunner.java:209)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWo[39m
+[31mrker.execute(DefaultBuildOperationRunner.java:204)[22m[39m
+[31m[   +1 ms] [1m	at[39m
+[31morg.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOp[39m
+[31merationRunner.java:66)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOp[39m
+[31merationRunner.java:59)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOper[39m
+[31mationRunner.java:166)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOper[39m
+[31mationRunner.java:59)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.operations.DefaultBuildOperationRunner.call(DefaultBuildOperati[39m
+[31monRunner.java:53)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.initialization.BuildOperationSettingsProcessor.process(BuildOperationSet[39m
+[31mtingsProcessor.java:46)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.initialization.DefaultSettingsLoader.findSettingsAndLoadIfAppropriate(De[39m
+[31mfaultSettingsLoader.java:143)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.initialization.DefaultSettingsLoader.findAndLoadSettings(DefaultSettings[39m
+[31mLoader.java:63)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.initialization.SettingsAttachingSettingsLoader.findAndLoadSettings(Setti[39m
+[31mngsAttachingSettingsLoader.java:33)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.composite.CommandLineIncludedBuildSettingsLoader.findAndLoadSet[39m
+[31mtings(CommandLineIncludedBuildSettingsLoader.java:35)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.composite.ChildBuildRegisteringSettingsLoader.findAndLoadSettin[39m
+[31mgs(ChildBuildRegisteringSettingsLoader.java:44)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.composite.CompositeBuildSettingsLoader.findAndLoadSettings(Comp[39m
+[31mositeBuildSettingsLoader.java:35)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.initialization.InitScriptHandlingSettingsLoader.findAndLoadSettings(Init[39m
+[31mScriptHandlingSettingsLoader.java:33)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.api.internal.initialization.CacheConfigurationsHandlingSettingsLoader.fi[39m
+[31mndAndLoadSettings(CacheConfigurationsHandlingSettingsLoader.java:36)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.initialization.GradlePropertiesHandlingSettingsLoader.findAndLoadSetting[39m
+[31ms(GradlePropertiesHandlingSettingsLoader.java:38)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.initialization.DefaultSettingsPreparer.prepareSettings(DefaultSettingsPr[39m
+[31meparer.java:31)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.initialization.BuildOperationFiringSettingsPreparer$LoadBuild.doLoadBuil[39m
+[31md(BuildOperationFiringSettingsPreparer.java:71)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.initialization.BuildOperationFiringSettingsPreparer$LoadBuild.run(BuildO[39m
+[31mperationFiringSettingsPreparer.java:66)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(DefaultBuildOp[39m
+[31merationRunner.java:29)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(DefaultBuildOp[39m
+[31merationRunner.java:26)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOp[39m
+[31merationRunner.java:66)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOp[39m
+[31merationRunner.java:59)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOper[39m
+[31mationRunner.java:166)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOper[39m
+[31mationRunner.java:59)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.operations.DefaultBuildOperationRunner.run(DefaultBuildOperatio[39m
+[31mnRunner.java:47)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.initialization.BuildOperationFiringSettingsPreparer.prepareSettings(Buil[39m
+[31mdOperationFiringSettingsPreparer.java:54)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.initialization.VintageBuildModelController.lambda$prepareSettings$1(Vint[39m
+[31mageBuildModelController.java:80)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.model.StateTransitionController.lambda$doTransition$14(StateTra[39m
+[31mnsitionController.java:255)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.model.StateTransitionController.doTransition(StateTransitionCon[39m
+[31mtroller.java:266)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.model.StateTransitionController.doTransition(StateTransitionCon[39m
+[31mtroller.java:254)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.model.StateTransitionController.lambda$transitionIfNotPreviousl[39m
+[31my$11(StateTransitionController.java:213)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.work.DefaultSynchronizer.withLock(DefaultSynchronizer.java:34)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.model.StateTransitionController.transitionIfNotPreviously(State[39m
+[31mTransitionController.java:209)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.initialization.VintageBuildModelController.prepareSettings(VintageBuildM[39m
+[31modelController.java:80)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.initialization.VintageBuildModelController.prepareToScheduleTasks(Vintag[39m
+[31meBuildModelController.java:70)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.build.DefaultBuildLifecycleController.lambda$prepareToScheduleT[39m
+[31masks$6(DefaultBuildLifecycleController.java:175)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.model.StateTransitionController.lambda$doTransition$14(StateTra[39m
+[31mnsitionController.java:255)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.model.StateTransitionController.doTransition(StateTransitionCon[39m
+[31mtroller.java:266)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.model.StateTransitionController.doTransition(StateTransitionCon[39m
+[31mtroller.java:254)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.model.StateTransitionController.lambda$maybeTransition$9(StateT[39m
+[31mransitionController.java:190)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.work.DefaultSynchronizer.withLock(DefaultSynchronizer.java:34)[22m[39m
+[31m[   +1 ms] [1m	at[39m
+[31morg.gradle.internal.model.StateTransitionController.maybeTransition(StateTransition[39m
+[31mController.java:186)[22m[39m
+[31m[   +3 ms] [1m	at[39m
+[31morg.gradle.internal.build.DefaultBuildLifecycleController.prepareToScheduleTasks(De[39m
+[31mfaultBuildLifecycleController.java:173)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.buildtree.DefaultBuildTreeWorkPreparer.scheduleRequestedTasks(D[39m
+[31mefaultBuildTreeWorkPreparer.java:36)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.cc.impl.VintageBuildTreeWorkController$scheduleAndRunRequestedT[39m
+[31masks$1.apply(VintageBuildTreeWorkController.kt:36)[22m[39m
+[31m[  +10 ms] [1m	at[39m
+[31morg.gradle.internal.cc.impl.VintageBuildTreeWorkController$scheduleAndRunRequestedT[39m
+[31masks$1.apply(VintageBuildTreeWorkController.kt:35)[22m[39m
+[31m[   +1 ms] [1m	at[39m
+[31morg.gradle.composite.internal.DefaultIncludedBuildTaskGraph.withNewWorkGraph(Defaul[39m
+[31mtIncludedBuildTaskGraph.java:112)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.cc.impl.VintageBuildTreeWorkController.scheduleAndRunRequestedT[39m
+[31masks(VintageBuildTreeWorkController.kt:35)[22m[39m
+[31m[   +2 ms] [1m	at[39m
+[31morg.gradle.internal.buildtree.DefaultBuildTreeLifecycleController.lambda$scheduleAn[39m
+[31mdRunTasks$1(DefaultBuildTreeLifecycleController.java:77)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.buildtree.DefaultBuildTreeLifecycleController.lambda$runBuild$4[39m
+[31m(DefaultBuildTreeLifecycleController.java:120)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.model.StateTransitionController.lambda$transition$6(StateTransi[39m
+[31mtionController.java:169)[22m[39m
+[31m[   +1 ms] [1m	at[39m
+[31morg.gradle.internal.model.StateTransitionController.doTransition(StateTransitionCon[39m
+[31mtroller.java:266)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.model.StateTransitionController.lambda$transition$7(StateTransi[39m
+[31mtionController.java:169)[22m[39m
+[31m[   +1 ms] [1m	at[39m
+[31morg.gradle.internal.work.DefaultSynchronizer.withLock(DefaultSynchronizer.java:44)[22m[39m
+[31m[   +1 ms] [1m	at[39m
+[31morg.gradle.internal.model.StateTransitionController.transition(StateTransitionContr[39m
+[31moller.java:169)[22m[39m
+[31m[   +1 ms] [1m	at[39m
+[31morg.gradle.internal.buildtree.DefaultBuildTreeLifecycleController.runBuild(DefaultB[39m
+[31muildTreeLifecycleController.java:117)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.buildtree.DefaultBuildTreeLifecycleController.scheduleAndRunTas[39m
+[31mks(DefaultBuildTreeLifecycleController.java:77)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.buildtree.DefaultBuildTreeLifecycleController.scheduleAndRunTas[39m
+[31mks(DefaultBuildTreeLifecycleController.java:72)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.tooling.internal.provider.ExecuteBuildActionRunner.run(ExecuteBuildActio[39m
+[31mnRunner.java:31)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.launcher.exec.ChainingBuildActionRunner.run(ChainingBuildActionRunner.ja[39m
+[31mva:35)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.buildtree.ProblemReportingBuildActionRunner.run(ProblemReportin[39m
+[31mgBuildActionRunner.java:49)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.launcher.exec.BuildOutcomeReportingBuildActionRunner.run(BuildOutcomeRep[39m
+[31mortingBuildActionRunner.java:65)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.tooling.internal.provider.FileSystemWatchingBuildActionRunner.run(FileSy[39m
+[31mstemWatchingBuildActionRunner.java:140)[22m[39m
+[31m[   +1 ms] [1m	at[39m
+[31morg.gradle.launcher.exec.BuildCompletionNotifyingBuildActionRunner.run(BuildComplet[39m
+[31mionNotifyingBuildActionRunner.java:41)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.launcher.exec.RootBuildLifecycleBuildActionExecutor.lambda$execute$0(Roo[39m
+[31mtBuildLifecycleBuildActionExecutor.java:40)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.composite.internal.DefaultRootBuildState.run(DefaultRootBuildState.java:[39m
+[31m130)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.launcher.exec.RootBuildLifecycleBuildActionExecutor.execute(RootBuildLif[39m
+[31mecycleBuildActionExecutor.java:40)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.buildtree.InitDeprecationLoggingActionExecutor.execute(InitDepr[39m
+[31mecationLoggingActionExecutor.java:62)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.buildtree.InitProblems.execute(InitProblems.java:36)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.buildtree.DefaultBuildTreeContext.execute(DefaultBuildTreeConte[39m
+[31mxt.java:40)[22m[39m
+[31m[   +1 ms] [1m	at[39m
+[31morg.gradle.launcher.exec.BuildTreeLifecycleBuildActionExecutor.lambda$execute$0(Bui[39m
+[31mldTreeLifecycleBuildActionExecutor.java:71)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.buildtree.BuildTreeState.run(BuildTreeState.java:60)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.launcher.exec.BuildTreeLifecycleBuildActionExecutor.execute(BuildTreeLif[39m
+[31mecycleBuildActionExecutor.java:71)[22m[39m
+[31m[   +1 ms] [1m	at[39m
+[31morg.gradle.launcher.exec.RunAsBuildOperationBuildActionExecutor$3.call(RunAsBuildOp[39m
+[31merationBuildActionExecutor.java:61)[22m[39m
+[31m[   +1 ms] [1m	at[39m
+[31morg.gradle.launcher.exec.RunAsBuildOperationBuildActionExecutor$3.call(RunAsBuildOp[39m
+[31merationBuildActionExecutor.java:57)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWo[39m
+[31mrker.execute(DefaultBuildOperationRunner.java:209)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWo[39m
+[31mrker.execute(DefaultBuildOperationRunner.java:204)[22m[39m
+[31m[   +1 ms] [1m	at[39m
+[31morg.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOp[39m
+[31merationRunner.java:66)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOp[39m
+[31merationRunner.java:59)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOper[39m
+[31mationRunner.java:166)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOper[39m
+[31mationRunner.java:59)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.operations.DefaultBuildOperationRunner.call(DefaultBuildOperati[39m
+[31monRunner.java:53)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.launcher.exec.RunAsBuildOperationBuildActionExecutor.execute(RunAsBuildO[39m
+[31mperationBuildActionExecutor.java:57)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.launcher.exec.RunAsWorkerThreadBuildActionExecutor.lambda$execute$0(RunA[39m
+[31msWorkerThreadBuildActionExecutor.java:36)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.work.DefaultWorkerLeaseService.withLocks(DefaultWorkerLeaseServ[39m
+[31mice.java:267)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.work.DefaultWorkerLeaseService.runAsWorkerThread(DefaultWorkerL[39m
+[31measeService.java:131)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.launcher.exec.RunAsWorkerThreadBuildActionExecutor.execute(RunAsWorkerTh[39m
+[31mreadBuildActionExecutor.java:36)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.tooling.internal.provider.continuous.ContinuousBuildActionExecutor.execu[39m
+[31mte(ContinuousBuildActionExecutor.java:110)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.tooling.internal.provider.SubscribableBuildActionExecutor.execute(Subscr[39m
+[31mibableBuildActionExecutor.java:64)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.session.DefaultBuildSessionContext.execute(DefaultBuildSessionC[39m
+[31montext.java:46)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.buildprocess.execution.BuildSessionLifecycleBuildActionExecutor[39m
+[31m$ActionImpl.apply(BuildSessionLifecycleBuildActionExecutor.java:92)[22m[39m
+[31m[   +1 ms] [1m	at[39m
+[31morg.gradle.internal.buildprocess.execution.BuildSessionLifecycleBuildActionExecutor[39m
+[31m$ActionImpl.apply(BuildSessionLifecycleBuildActionExecutor.java:80)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.session.BuildSessionState.run(BuildSessionState.java:71)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.buildprocess.execution.BuildSessionLifecycleBuildActionExecutor[39m
+[31m.execute(BuildSessionLifecycleBuildActionExecutor.java:62)[22m[39m
+[31m[   +1 ms] [1m	at[39m
+[31morg.gradle.internal.buildprocess.execution.BuildSessionLifecycleBuildActionExecutor[39m
+[31m.execute(BuildSessionLifecycleBuildActionExecutor.java:41)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.buildprocess.execution.StartParamsValidatingActionExecutor.exec[39m
+[31mute(StartParamsValidatingActionExecutor.java:64)[22m[39m
+[31m[   +2 ms] [1m	at[39m
+[31morg.gradle.internal.buildprocess.execution.StartParamsValidatingActionExecutor.exec[39m
+[31mute(StartParamsValidatingActionExecutor.java:32)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.buildprocess.execution.SessionFailureReportingActionExecutor.ex[39m
+[31mecute(SessionFailureReportingActionExecutor.java:51)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.buildprocess.execution.SessionFailureReportingActionExecutor.ex[39m
+[31mecute(SessionFailureReportingActionExecutor.java:39)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.buildprocess.execution.SetupLoggingActionExecutor.execute(Setup[39m
+[31mLoggingActionExecutor.java:47)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.buildprocess.execution.SetupLoggingActionExecutor.execute(Setup[39m
+[31mLoggingActionExecutor.java:31)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.launcher.daemon.server.exec.ExecuteBuild.doBuild(ExecuteBuild.java:70)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.launcher.daemon.server.exec.BuildCommandOnly.execute(BuildCommandOnly.ja[39m
+[31mva:37)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.launcher.daemon.server.api.DaemonCommandExecution.proceed(DaemonCommandE[39m
+[31mxecution.java:104)[22m[39m
+[31m[   +1 ms] [1m	at[39m
+[31morg.gradle.launcher.daemon.server.exec.WatchForDisconnection.execute(WatchForDiscon[39m
+[31mnection.java:39)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.launcher.daemon.server.api.DaemonCommandExecution.proceed(DaemonCommandE[39m
+[31mxecution.java:104)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.launcher.daemon.server.exec.ResetDeprecationLogger.execute(ResetDeprecat[39m
+[31mionLogger.java:29)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.launcher.daemon.server.api.DaemonCommandExecution.proceed(DaemonCommandE[39m
+[31mxecution.java:104)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.launcher.daemon.server.exec.RequestStopIfSingleUsedDaemon.execute(Reques[39m
+[31mtStopIfSingleUsedDaemon.java:35)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.launcher.daemon.server.api.DaemonCommandExecution.proceed(DaemonCommandE[39m
+[31mxecution.java:104)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.launcher.daemon.server.exec.ForwardClientInput.lambda$execute$0(ForwardC[39m
+[31mlientInput.java:40)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.daemon.clientinput.ClientInputForwarder.forwardInput(ClientInpu[39m
+[31mtForwarder.java:80)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.launcher.daemon.server.exec.ForwardClientInput.execute(ForwardClientInpu[39m
+[31mt.java:37)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.launcher.daemon.server.api.DaemonCommandExecution.proceed(DaemonCommandE[39m
+[31mxecution.java:104)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.launcher.daemon.server.exec.LogAndCheckHealth.execute(LogAndCheckHealth.[39m
+[31mjava:64)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.launcher.daemon.server.api.DaemonCommandExecution.proceed(DaemonCommandE[39m
+[31mxecution.java:104)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.launcher.daemon.server.exec.LogToClient.doBuild(LogToClient.java:63)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.launcher.daemon.server.exec.BuildCommandOnly.execute(BuildCommandOnly.ja[39m
+[31mva:37)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.launcher.daemon.server.api.DaemonCommandExecution.proceed(DaemonCommandE[39m
+[31mxecution.java:104)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.launcher.daemon.server.exec.EstablishBuildEnvironment.doBuild(EstablishB[39m
+[31muildEnvironment.java:84)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.launcher.daemon.server.exec.BuildCommandOnly.execute(BuildCommandOnly.ja[39m
+[31mva:37)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.launcher.daemon.server.api.DaemonCommandExecution.proceed(DaemonCommandE[39m
+[31mxecution.java:104)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.launcher.daemon.server.exec.StartBuildOrRespondWithBusy$1.run(StartBuild[39m
+[31mOrRespondWithBusy.java:52)[22m[39m
+[31m[   +1 ms] [1m	at[39m
+[31morg.gradle.launcher.daemon.server.DaemonStateCoordinator.lambda$runCommand$0(Daemon[39m
+[31mStateCoordinator.java:320)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(Exec[39m
+[31mutorPolicy.java:64)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.concurrent.AbstractManagedExecutor$1.run(AbstractManagedExecuto[39m
+[31mr.java:48)[22m[39m
+[31m[   +1 ms] [1m	at[39m
+[31mjava.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java[39m
+[31m:1136)[22m[39m
+[31m[        ] [1m	at[39m
+[31mjava.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.jav[39m
+[31ma:635)[22m[39m
+[31m[        ] [1m	at java.base/java.lang.Thread.run(Thread.java:840)[22m[39m
+[31m[        ] [1mCaused by: org.gradle.api.InvalidUserCodeException: Build was configured[39m
+[31mto prefer settings repositories over project repositories but repository 'maven'[39m
+[31mwas added by settings file 'settings.gradle.kts'[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.management.DefaultDependencyResolutionManagement.repoMutationDi[39m
+[31msallowedOnProject(DefaultDependencyResolutionManagement.java:199)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.code.DefaultUserCodeApplicationContext$CurrentApplication$1.exe[39m
+[31mcute(DefaultUserCodeApplicationContext.java:124)[22m[39m
+[31m[   +1 ms] [1m	at[39m
+[31morg.gradle.api.internal.DefaultCollectionCallbackActionDecorator$BuildOperationEmit[39m
+[31mtingAction$1.run(DefaultCollectionCallbackActionDecorator.java:110)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(DefaultBuildOp[39m
+[31merationRunner.java:29)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(DefaultBuildOp[39m
+[31merationRunner.java:26)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOp[39m
+[31merationRunner.java:66)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOp[39m
+[31merationRunner.java:59)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOper[39m
+[31mationRunner.java:166)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOper[39m
+[31mationRunner.java:59)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.operations.DefaultBuildOperationRunner.run(DefaultBuildOperatio[39m
+[31mnRunner.java:47)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.api.internal.DefaultCollectionCallbackActionDecorator$BuildOperationEmit[39m
+[31mtingAction.execute(DefaultCollectionCallbackActionDecorator.java:107)[22m[39m
+[31m[   +1 ms] [1m	at[39m
+[31morg.gradle.internal.ImmutableActionSet$SetWithFewActions.execute(ImmutableActionSet[39m
+[31m.java:285)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.api.internal.DefaultDomainObjectCollection.doAdd(DefaultDomainObjectColl[39m
+[31mection.java:262)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.api.internal.DefaultNamedDomainObjectCollection.doAdd(DefaultNamedDomain[39m
+[31mObjectCollection.java:125)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.api.internal.DefaultDomainObjectCollection.add(DefaultDomainObjectCollec[39m
+[31mtion.java:251)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.api.internal.artifacts.DefaultArtifactRepositoryContainer.access$101(Def[39m
+[31maultArtifactRepositoryContainer.java:35)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.api.internal.artifacts.DefaultArtifactRepositoryContainer.lambda$new$0(D[39m
+[31mefaultArtifactRepositoryContainer.java:38)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.api.internal.artifacts.DefaultArtifactRepositoryContainer.addWithUniqueN[39m
+[31mame(DefaultArtifactRepositoryContainer.java:101)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.api.internal.artifacts.DefaultArtifactRepositoryContainer.addRepository([39m
+[31mDefaultArtifactRepositoryContainer.java:89)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.api.internal.artifacts.dsl.DefaultRepositoryHandler.maven(DefaultReposit[39m
+[31moryHandler.java:162)[22m[39m
+[31m[   +1 ms] [1m	at[39m
+[31morg.gradle.api.internal.artifacts.dsl.DefaultRepositoryHandler.maven(DefaultReposit[39m
+[31moryHandler.java:168)[22m[39m
+[31m[        ] [1m	at jdk.internal.reflect.GeneratedMethodAccessor38.invoke(Unknown[39m
+[31mSource)[22m[39m
+[31m[        ] [1m	at[39m
+[31mjava.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethod[39m
+[31mAccessorImpl.java:43)[22m[39m
+[31m[   +1 ms] [1m	at java.base/java.lang.reflect.Method.invoke(Method.java:569)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:107)[22m[39m
+[31m[        ] [1m	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.metaobject.BeanDynamicObject$MetaClassAdapter.invokeMethod(Bean[39m
+[31mDynamicObject.java:547)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.metaobject.BeanDynamicObject.tryInvokeMethod(BeanDynamicObject.[39m
+[31mjava:218)[22m[39m
+[31m[   +1 ms] [1m	at[39m
+[31morg.gradle.internal.metaobject.CompositeDynamicObject.tryInvokeMethod(CompositeDyna[39m
+[31mmicObject.java:99)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.extensibility.MixInClosurePropertiesAsMethodsDynamicObject.tryI[39m
+[31mnvokeMethod(MixInClosurePropertiesAsMethodsDynamicObject.java:38)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.metaobject.ConfigureDelegate.invokeMethod(ConfigureDelegate.jav[39m
+[31ma:65)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeOnDelegationObjects(Cl[39m
+[31mosureMetaClass.java:408)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClas[39m
+[31ms.java:348)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.codehaus.groovy.runtime.callsite.PogoMetaClassSite.callCurrent(PogoMetaClassSit[39m
+[31me.java:61)[22m[39m
+[31m[   +1 ms] [1m	at[39m
+[31morg.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.[39m
+[31mjava:185)[22m[39m
+[31m[        ] [1m	at[39m
+[31minit_epmj9lvqnfg9ngibhaxhb2ng7$_run_closure1$_closure3.doCall$original(C:\Users\YOU[39m
+[31mSS\.gradle\init.gradle:11)[22m[39m
+[31m[        ] [1m	at[39m
+[31minit_epmj9lvqnfg9ngibhaxhb2ng7$_run_closure1$_closure3.doCall(C:\Users\YOUSS\.gradl[39m
+[31me\init.gradle)[22m[39m
+[31m[        ] [1m	at[39m
+[31mjava.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)[22m[39m
+[31m[   +1 ms] [1m	at[39m
+[31mjava.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessor[39m
+[31mImpl.java:77)[22m[39m
+[31m[        ] [1m	at[39m
+[31mjava.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethod[39m
+[31mAccessorImpl.java:43)[22m[39m
+[31m[        ] [1m	at java.base/java.lang.reflect.Method.invoke(Method.java:569)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:107)[22m[39m
+[31m[        ] [1m	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClas[39m
+[31ms.java:274)[22m[39m
+[31m[        ] [1m	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1030)[22m[39m
+[31m[        ] [1m	at groovy.lang.Closure.call(Closure.java:427)[22m[39m
+[31m[        ] [1m	at groovy.lang.Closure.call(Closure.java:416)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.util.internal.ClosureBackedAction.execute(ClosureBackedAction.java:73)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.util.internal.ConfigureUtil.configureTarget(ConfigureUtil.java:166)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.util.internal.ConfigureUtil.configureSelf(ConfigureUtil.java:142)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.api.internal.artifacts.DefaultArtifactRepositoryContainer.configure(Defa[39m
+[31multArtifactRepositoryContainer.java:65)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.api.internal.artifacts.DefaultArtifactRepositoryContainer.configure(Defa[39m
+[31multArtifactRepositoryContainer.java:35)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.util.internal.ConfigureUtil.configure(ConfigureUtil.java:105)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.api.internal.project.DefaultProject.repositories(DefaultProject.java:126[39m
+[31m2)[22m[39m
+[31m[        ] [1m	at[39m
+[31mjava.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)[22m[39m
+[31m[        ] [1m	at[39m
+[31mjava.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessor[39m
+[31mImpl.java:77)[22m[39m
+[31m[        ] [1m	at[39m
+[31mjava.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethod[39m
+[31mAccessorImpl.java:43)[22m[39m
+[31m[        ] [1m	at java.base/java.lang.reflect.Method.invoke(Method.java:569)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:107)[22m[39m
+[31m[        ] [1m	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)[22m[39m
+[31m[   +1 ms] [1m	at[39m
+[31morg.gradle.internal.metaobject.BeanDynamicObject$MetaClassAdapter.invokeMethod(Bean[39m
+[31mDynamicObject.java:547)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.metaobject.BeanDynamicObject.tryInvokeMethod(BeanDynamicObject.[39m
+[31mjava:218)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.metaobject.CompositeDynamicObject.tryInvokeMethod(CompositeDyna[39m
+[31mmicObject.java:99)[22m[39m
+[31m[   +1 ms] [1m	at[39m
+[31morg.gradle.internal.extensibility.MixInClosurePropertiesAsMethodsDynamicObject.tryI[39m
+[31mnvokeMethod(MixInClosurePropertiesAsMethodsDynamicObject.java:38)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.metaobject.ConfigureDelegate.invokeMethod(ConfigureDelegate.jav[39m
+[31ma:65)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeOnDelegationObjects(Cl[39m
+[31mosureMetaClass.java:408)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClas[39m
+[31ms.java:348)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.codehaus.groovy.runtime.callsite.PogoMetaClassSite.callCurrent(PogoMetaClassSit[39m
+[31me.java:61)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.[39m
+[31mjava:185)[22m[39m
+[31m[        ] [1m	at[39m
+[31minit_epmj9lvqnfg9ngibhaxhb2ng7$_run_closure1.doCall$original(C:\Users\YOUSS\.gradle[39m
+[31m\init.gradle:10)[22m[39m
+[31m[        ] [1m	at[39m
+[31minit_epmj9lvqnfg9ngibhaxhb2ng7$_run_closure1.doCall(C:\Users\YOUSS\.gradle\init.gra[39m
+[31mdle)[22m[39m
+[31m[        ] [1m	at[39m
+[31mjava.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)[22m[39m
+[31m[        ] [1m	at[39m
+[31mjava.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessor[39m
+[31mImpl.java:77)[22m[39m
+[31m[        ] [1m	at[39m
+[31mjava.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethod[39m
+[31mAccessorImpl.java:43)[22m[39m
+[31m[        ] [1m	at java.base/java.lang.reflect.Method.invoke(Method.java:569)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:107)[22m[39m
+[31m[        ] [1m	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClas[39m
+[31ms.java:274)[22m[39m
+[31m[        ] [1m	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1030)[22m[39m
+[31m[        ] [1m	at groovy.lang.Closure.call(Closure.java:427)[22m[39m
+[31m[        ] [1m	at groovy.lang.Closure.call(Closure.java:416)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.util.internal.ClosureBackedAction.execute(ClosureBackedAction.java:73)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.util.internal.ConfigureUtil.configureTarget(ConfigureUtil.java:166)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.util.internal.ConfigureUtil.configure(ConfigureUtil.java:107)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.util.internal.ConfigureUtil$WrappedConfigureAction.execute(ConfigureUtil[39m
+[31m.java:178)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.api.internal.DefaultMutationGuard$1.execute(DefaultMutationGuard.java:45[39m
+[31m)[22m[39m
+[31m[        ] [1m	at org.gradle.internal.Actions.with(Actions.java:206)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.api.internal.project.BuildOperationCrossProjectConfigurator$1.run(BuildO[39m
+[31mperationCrossProjectConfigurator.java:69)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(DefaultBuildOp[39m
+[31merationRunner.java:29)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(DefaultBuildOp[39m
+[31merationRunner.java:26)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOp[39m
+[31merationRunner.java:66)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOp[39m
+[31merationRunner.java:59)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOper[39m
+[31mationRunner.java:166)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOper[39m
+[31mationRunner.java:59)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.operations.DefaultBuildOperationRunner.run(DefaultBuildOperatio[39m
+[31mnRunner.java:47)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.api.internal.project.BuildOperationCrossProjectConfigurator.lambda$runPr[39m
+[31mojectConfigureAction$0(BuildOperationCrossProjectConfigurator.java:66)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.api.internal.project.DefaultProjectStateRegistry$ProjectStateImpl.lambda[39m
+[31m$applyToMutableState$1(DefaultProjectStateRegistry.java:407)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.api.internal.project.DefaultProjectStateRegistry$ProjectStateImpl.fromMu[39m
+[31mtableState(DefaultProjectStateRegistry.java:425)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.api.internal.project.DefaultProjectStateRegistry$ProjectStateImpl.applyT[39m
+[31moMutableState(DefaultProjectStateRegistry.java:406)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.api.internal.project.BuildOperationCrossProjectConfigurator.runProjectCo[39m
+[31mnfigureAction(BuildOperationCrossProjectConfigurator.java:66)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.api.internal.project.BuildOperationCrossProjectConfigurator.access$100(B[39m
+[31muildOperationCrossProjectConfigurator.java:32)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.api.internal.project.BuildOperationCrossProjectConfigurator$BlockConfigu[39m
+[31mreBuildOperation.run(BuildOperationCrossProjectConfigurator.java:107)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(DefaultBuildOp[39m
+[31merationRunner.java:29)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(DefaultBuildOp[39m
+[31merationRunner.java:26)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOp[39m
+[31merationRunner.java:66)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOp[39m
+[31merationRunner.java:59)[22m[39m
+[31m[   +1 ms] [1m	at[39m
+[31morg.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOper[39m
+[31mationRunner.java:166)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOper[39m
+[31mationRunner.java:59)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.operations.DefaultBuildOperationRunner.run(DefaultBuildOperatio[39m
+[31mnRunner.java:47)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.api.internal.project.BuildOperationCrossProjectConfigurator.runBlockConf[39m
+[31migureAction(BuildOperationCrossProjectConfigurator.java:62)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.api.internal.project.BuildOperationCrossProjectConfigurator.allprojects([39m
+[31mBuildOperationCrossProjectConfigurator.java:53)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.api.internal.project.DefaultProject.allprojects(DefaultProject.java:692)[22m[39m
+[31m[   +1 ms] [1m	at[39m
+[31morg.gradle.api.internal.project.DefaultProject.allprojects(DefaultProject.java:687)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.invocation.DefaultGradle.lambda$allprojects$0(DefaultGradle.java:304)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.code.DefaultUserCodeApplicationContext$CurrentApplication$1.exe[39m
+[31mcute(DefaultUserCodeApplicationContext.java:124)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.configuration.internal.DefaultListenerBuildOperationDecorator$BuildOpera[39m
+[31mtionEmittingAction$1.run(DefaultListenerBuildOperationDecorator.java:173)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(DefaultBuildOp[39m
+[31merationRunner.java:29)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(DefaultBuildOp[39m
+[31merationRunner.java:26)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOp[39m
+[31merationRunner.java:66)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOp[39m
+[31merationRunner.java:59)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOper[39m
+[31mationRunner.java:166)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOper[39m
+[31mationRunner.java:59)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.operations.DefaultBuildOperationRunner.run(DefaultBuildOperatio[39m
+[31mnRunner.java:47)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.configuration.internal.DefaultListenerBuildOperationDecorator$BuildOpera[39m
+[31mtionEmittingAction.execute(DefaultListenerBuildOperationDecorator.java:170)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.ImmutableActionSet$SingletonSet.execute(ImmutableActionSet.java[39m
+[31m:225)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.MutableActionSet.execute(MutableActionSet.java:41)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.api.internal.DefaultMutationGuard$1.execute(DefaultMutationGuard.java:45[39m
+[31m)[22m[39m
+[31m[        ] [1m	at org.gradle.internal.Actions.with(Actions.java:206)[22m[39m
+[31m[   +1 ms] [1m	at[39m
+[31morg.gradle.api.internal.project.BuildOperationCrossProjectConfigurator$1.run(BuildO[39m
+[31mperationCrossProjectConfigurator.java:69)[22m[39m
+[31m[   +1 ms] [1m	at[39m
+[31morg.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(DefaultBuildOp[39m
+[31merationRunner.java:29)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(DefaultBuildOp[39m
+[31merationRunner.java:26)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOp[39m
+[31merationRunner.java:66)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOp[39m
+[31merationRunner.java:59)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOper[39m
+[31mationRunner.java:166)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOper[39m
+[31mationRunner.java:59)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.operations.DefaultBuildOperationRunner.run(DefaultBuildOperatio[39m
+[31mnRunner.java:47)[22m[39m
+[31m[   +4 ms] [1m	at[39m
+[31morg.gradle.api.internal.project.BuildOperationCrossProjectConfigurator.lambda$runPr[39m
+[31mojectConfigureAction$0(BuildOperationCrossProjectConfigurator.java:66)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.api.internal.project.DefaultProjectStateRegistry$ProjectStateImpl.lambda[39m
+[31m$applyToMutableState$1(DefaultProjectStateRegistry.java:407)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.api.internal.project.DefaultProjectStateRegistry$ProjectStateImpl.lambda[39m
+[31m$fromMutableState$2(DefaultProjectStateRegistry.java:430)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.work.DefaultWorkerLeaseService.withReplacedLocks(DefaultWorkerL[39m
+[31measeService.java:363)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.api.internal.project.DefaultProjectStateRegistry$ProjectStateImpl.fromMu[39m
+[31mtableState(DefaultProjectStateRegistry.java:430)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.api.internal.project.DefaultProjectStateRegistry$ProjectStateImpl.applyT[39m
+[31moMutableState(DefaultProjectStateRegistry.java:406)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.api.internal.project.BuildOperationCrossProjectConfigurator.runProjectCo[39m
+[31mnfigureAction(BuildOperationCrossProjectConfigurator.java:66)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.api.internal.project.BuildOperationCrossProjectConfigurator.access$100(B[39m
+[31muildOperationCrossProjectConfigurator.java:32)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.api.internal.project.BuildOperationCrossProjectConfigurator$BlockConfigu[39m
+[31mreBuildOperation.run(BuildOperationCrossProjectConfigurator.java:107)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(DefaultBuildOp[39m
+[31merationRunner.java:29)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(DefaultBuildOp[39m
+[31merationRunner.java:26)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOp[39m
+[31merationRunner.java:66)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOp[39m
+[31merationRunner.java:59)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOper[39m
+[31mationRunner.java:166)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOper[39m
+[31mationRunner.java:59)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.operations.DefaultBuildOperationRunner.run(DefaultBuildOperatio[39m
+[31mnRunner.java:47)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.api.internal.project.BuildOperationCrossProjectConfigurator.runBlockConf[39m
+[31migureAction(BuildOperationCrossProjectConfigurator.java:62)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.api.internal.project.BuildOperationCrossProjectConfigurator.rootProject([39m
+[31mBuildOperationCrossProjectConfigurator.java:58)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.invocation.DefaultGradle$1.projectsLoaded(DefaultGradle.java:118)[22m[39m
+[31m[   +1 ms] [1m	at jdk.internal.reflect.GeneratedMethodAccessor18.invoke(Unknown[39m
+[31mSource)[22m[39m
+[31m[        ] [1m	at[39m
+[31mjava.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethod[39m
+[31mAccessorImpl.java:43)[22m[39m
+[31m[        ] [1m	at java.base/java.lang.reflect.Method.invoke(Method.java:569)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36[39m
+[31m)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24[39m
+[31m)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.event.AbstractBroadcastDispatch.dispatch(AbstractBroadcastDispa[39m
+[31mtch.java:44)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.event.BroadcastDispatch$SingletonDispatch.dispatch(BroadcastDis[39m
+[31mpatch.java:268)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.event.BroadcastDispatch$SingletonDispatch.dispatch(BroadcastDis[39m
+[31mpatch.java:170)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.event.AbstractBroadcastDispatch.dispatch(AbstractBroadcastDispa[39m
+[31mtch.java:84)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.event.AbstractBroadcastDispatch.dispatch(AbstractBroadcastDispa[39m
+[31mtch.java:70)[22m[39m
+[31m[   +1 ms] [1m	at[39m
+[31morg.gradle.internal.event.BroadcastDispatch$CompositeDispatch.dispatch(BroadcastDis[39m
+[31mpatch.java:380)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.event.BroadcastDispatch$CompositeDispatch.dispatch(BroadcastDis[39m
+[31mpatch.java:272)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.event.ListenerBroadcast.dispatch(ListenerBroadcast.java:148)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.event.ListenerBroadcast.dispatch(ListenerBroadcast.java:37)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invo[39m
+[31mke(ProxyDispatchAdapter.java:92)[22m[39m
+[31m[        ] [1m	at jdk.proxy1/jdk.proxy1.$Proxy41.projectsLoaded(Unknown Source)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.initialization.NotifyingBuildLoader$3.run(NotifyingBuildLoader.java:72)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(DefaultBuildOp[39m
+[31merationRunner.java:29)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(DefaultBuildOp[39m
+[31merationRunner.java:26)[22m[39m
+[31m[   +1 ms] [1m	at[39m
+[31morg.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOp[39m
+[31merationRunner.java:66)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOp[39m
+[31merationRunner.java:59)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOper[39m
+[31mationRunner.java:166)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOper[39m
+[31mationRunner.java:59)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.operations.DefaultBuildOperationRunner.run(DefaultBuildOperatio[39m
+[31mnRunner.java:47)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.initialization.NotifyingBuildLoader.load(NotifyingBuildLoader.java:69)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.configuration.BuildTreePreparingProjectsPreparer.prepareProjects(BuildTr[39m
+[31meePreparingProjectsPreparer.java:57)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.configuration.BuildOperationFiringProjectsPreparer$ConfigureBuild.run(Bu[39m
+[31mildOperationFiringProjectsPreparer.java:52)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(DefaultBuildOp[39m
+[31merationRunner.java:29)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(DefaultBuildOp[39m
+[31merationRunner.java:26)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOp[39m
+[31merationRunner.java:66)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOp[39m
+[31merationRunner.java:59)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOper[39m
+[31mationRunner.java:166)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOper[39m
+[31mationRunner.java:59)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.operations.DefaultBuildOperationRunner.run(DefaultBuildOperatio[39m
+[31mnRunner.java:47)[22m[39m
+[31m[   +1 ms] [1m	at[39m
+[31morg.gradle.configuration.BuildOperationFiringProjectsPreparer.prepareProjects(Build[39m
+[31mOperationFiringProjectsPreparer.java:40)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.initialization.VintageBuildModelController.lambda$prepareProjects$2(Vint[39m
+[31mageBuildModelController.java:84)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.model.StateTransitionController.lambda$doTransition$14(StateTra[39m
+[31mnsitionController.java:255)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.model.StateTransitionController.doTransition(StateTransitionCon[39m
+[31mtroller.java:266)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.model.StateTransitionController.doTransition(StateTransitionCon[39m
+[31mtroller.java:254)[22m[39m
+[31m[   +3 ms] [1m	at[39m
+[31morg.gradle.internal.model.StateTransitionController.lambda$transitionIfNotPreviousl[39m
+[31my$11(StateTransitionController.java:213)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.work.DefaultSynchronizer.withLock(DefaultSynchronizer.java:34)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.model.StateTransitionController.transitionIfNotPreviously(State[39m
+[31mTransitionController.java:209)[22m[39m
+[31m[   +1 ms] [1m	at[39m
+[31morg.gradle.initialization.VintageBuildModelController.prepareProjects(VintageBuildM[39m
+[31modelController.java:84)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.initialization.VintageBuildModelController.getConfiguredModel(VintageBui[39m
+[31mldModelController.java:64)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.model.StateTransitionController.lambda$notInState$3(StateTransi[39m
+[31mtionController.java:132)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.work.DefaultSynchronizer.withLock(DefaultSynchronizer.java:44)[22m[39m
+[31m[   +1 ms] [1m	at[39m
+[31morg.gradle.internal.model.StateTransitionController.notInState(StateTransitionContr[39m
+[31moller.java:128)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.build.DefaultBuildLifecycleController.configureProjects(Default[39m
+[31mBuildLifecycleController.java:128)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.build.AbstractBuildState.ensureProjectsConfigured(AbstractBuild[39m
+[31mState.java:132)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.buildtree.BuildInclusionCoordinator.prepareForPluginResolution([39m
+[31mBuildInclusionCoordinator.java:89)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.internal.composite.DefaultBuildIncluder.prepareForPluginResolution(Defau[39m
+[31mltBuildIncluder.java:92)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.composite.internal.plugins.CompositeBuildPluginResolverContributor$Compo[39m
+[31msiteBuildPluginResolver.resolveFromIncludedPluginBuilds(CompositeBuildPluginResolve[39m
+[31mrContributor.java:112)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.composite.internal.plugins.CompositeBuildPluginResolverContributor$Compo[39m
+[31msiteBuildPluginResolver.doResolve(CompositeBuildPluginResolverContributor.java:89)[22m[39m
+[31m[        ] [1m	at[39m
+[31mjava.base/java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.[39m
+[31mjava:1708)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.composite.internal.plugins.CompositeBuildPluginResolverContributor$Compo[39m
+[31msiteBuildPluginResolver.resolve(CompositeBuildPluginResolverContributor.java:78)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.plugin.use.resolve.internal.CompositePluginResolver.resolve(CompositePlu[39m
+[31mginResolver.java:36)[22m[39m
+[31m[        ] [1m	at[39m
+[31morg.gradle.plugin.use.resolve.internal.AlreadyOnClasspathPluginResolver.resolve(Alr[39m
+[31meadyOnClasspathPluginResolver.java:65)[22m[39m
+[31m[   +1 ms] [1m	at[39m
+[31morg.gradle.plugin.use.internal.DefaultPluginRequestApplicator.resolvePluginRequest([39m
+[31mDefaultPluginRequestApplicator.java:185)[22m[39m
+[31m[        ] [1m	... 159 more[22m[39m
+[31m[        ] [1mBUILD FAILED in 2s[22m[39m
+[31m[[1m +205 ms[22m] [1mGradle task assembleRelease failed with exit code 1[22m[39m
+[31m[   +2 ms] [1m[22m[39m
+[31m[1m           #0      throwToolExit (package:flutter_tools/src/base/common.dart:34:3)[22m[39m
+[31m[1m           #1      AndroidGradleBuilder.buildGradleApp[22m[39m
+[31m[1m           (package:flutter_tools/src/android/gradle.dart:592:7)[22m[39m
+[31m[1m           <asynchronous suspension>[22m[39m
+[31m[1m           #2      AndroidGradleBuilder.buildApk[22m[39m
+[31m[1m           (package:flutter_tools/src/android/gradle.dart:234:5)[22m[39m
+[31m[1m           <asynchronous suspension>[22m[39m
+[31m[1m           #3      BuildApkCommand.runCommand[22m[39m
+[31m[1m           (package:flutter_tools/src/commands/build_apk.dart:131:5)[22m[39m
+[31m[1m           <asynchronous suspension>[22m[39m
+[31m[1m           #4      FlutterCommand.run.<anonymous closure>[22m[39m
+[31m[1m           (package:flutter_tools/src/runner/flutter_command.dart:1559:27)[22m[39m
+[31m[1m           <asynchronous suspension>[22m[39m
+[31m[1m           #5      AppContext.run.<anonymous closure>[22m[39m
+[31m[1m           (package:flutter_tools/src/base/context.dart:154:19)[22m[39m
+[31m[1m           <asynchronous suspension>[22m[39m
+[31m[1m           #6      CommandRunner.runCommand[39m
+[31m(package:args/command_runner.dart:212:13)[22m[39m
+[31m[1m           <asynchronous suspension>[22m[39m
+[31m[1m           #7      FlutterCommandRunner.runCommand.<anonymous closure>[22m[39m
+[31m[1m           (package:flutter_tools/src/runner/flutter_command_runner.dart:487:9)[22m[39m
+[31m[1m           <asynchronous suspension>[22m[39m
+[31m[1m           #8      AppContext.run.<anonymous closure>[22m[39m
+[31m[1m           (package:flutter_tools/src/base/context.dart:154:19)[22m[39m
+[31m[1m           <asynchronous suspension>[22m[39m
+[31m[1m           #9      FlutterCommandRunner.runCommand[22m[39m
+[31m[1m           (package:flutter_tools/src/runner/flutter_command_runner.dart:422:5)[22m[39m
+[31m[1m           <asynchronous suspension>[22m[39m
+[31m[1m           #10     run.<anonymous closure>.<anonymous closure>[22m[39m
+[31m[1m           (package:flutter_tools/runner.dart:104:11)[22m[39m
+[31m[1m           <asynchronous suspension>[22m[39m
+[31m[1m           #11     AppContext.run.<anonymous closure>[22m[39m
+[31m[1m           (package:flutter_tools/src/base/context.dart:154:19)[22m[39m
+[31m[1m           <asynchronous suspension>[22m[39m
+[31m[1m           #12     main (package:flutter_tools/executable.dart:103:3)[22m[39m
+[31m[1m           <asynchronous suspension>[22m[39m
+[31m[1m           [22m[39m
+[31m[1m           [22m[39m
