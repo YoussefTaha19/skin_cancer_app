@@ -1,9 +1,7 @@
-import 'dart:convert';
-import 'dart:html' as html;
-import 'dart:typed_data';
+import 'dart:io';
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
-import 'package:simple_web_camera/simple_web_camera.dart';
+import 'package:image_picker/image_picker.dart';
+import '../services/api_service.dart';
 import '../utils/disease_data.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -14,13 +12,12 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  Uint8List? _selectedImageBytes;
-  String? _selectedImageName;
+  File? _selectedImage;
   bool _isLoading = false;
   Map<String, dynamic>? _result;
   String? _errorMessage;
 
-  final String baseUrl = 'http://192.168.1.105:5000';
+  final ImagePicker _picker = ImagePicker();
 
   void _showAppInfo() {
     showDialog(
@@ -166,50 +163,34 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   Future<void> _pickImage() async {
-    final html.FileUploadInputElement input = html.FileUploadInputElement();
-    input.accept = 'image/*';
-    input.click();
+    try {
+      final XFile? picked = await _picker.pickImage(source: ImageSource.gallery);
+      if (picked == null) return;
 
-    input.onChange.listen((event) {
-      final files = input.files;
-      if (files!.isEmpty) return;
-      
-      final reader = html.FileReader();
-      reader.readAsArrayBuffer(files[0]);
-      reader.onLoadEnd.listen((event) {
-        setState(() {
-          _selectedImageBytes = reader.result as Uint8List?;
-          _selectedImageName = files[0].name;
-          _result = null;
-          _errorMessage = null;
-        });
-        _analyzeImage();
+      setState(() {
+        _selectedImage = File(picked.path);
+        _result = null;
+        _errorMessage = null;
       });
-    });
+      _analyzeImage();
+    } catch (e) {
+      setState(() {
+        _errorMessage = 'فشل اختيار الصورة: $e';
+      });
+    }
   }
 
   Future<void> _takePhoto() async {
     try {
-      var result = await Navigator.push(
-        context,
-        MaterialPageRoute(
-          builder: (context) => const SimpleWebCameraPage(
-            appBarTitle: "التقاط صورة",
-            centerTitle: true,
-          ),
-        ),
-      );
-      
-      if (result is String) {
-        Uint8List bytes = base64Decode(result);
-        setState(() {
-          _selectedImageBytes = bytes;
-          _selectedImageName = 'camera_image.jpg';
-          _result = null;
-          _errorMessage = null;
-        });
-        _analyzeImage();
-      }
+      final XFile? photo = await _picker.pickImage(source: ImageSource.camera);
+      if (photo == null) return;
+
+      setState(() {
+        _selectedImage = File(photo.path);
+        _result = null;
+        _errorMessage = null;
+      });
+      _analyzeImage();
     } catch (e) {
       setState(() {
         _errorMessage = 'فشل تشغيل الكاميرا: $e';
@@ -218,53 +199,22 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   Future<void> _analyzeImage() async {
-    if (_selectedImageBytes == null) return;
+    if (_selectedImage == null) return;
 
     setState(() {
       _isLoading = true;
       _errorMessage = null;
     });
 
-    // 👇 رسائل التتبع
-    print('📌 [1] بدأ التحليل');
-    print('📌 [2] حجم الصورة: ${_selectedImageBytes!.length} بايت');
-    print('📌 [3] رابط السيرفر: $baseUrl/predict');
-
     try {
-      var request = http.MultipartRequest(
-        'POST',
-        Uri.parse('$baseUrl/predict'),
-      );
-      
-      request.files.add(
-        http.MultipartFile.fromBytes(
-          'image',
-          _selectedImageBytes!,
-          filename: _selectedImageName ?? 'image.jpg',
-        ),
-      );
-      
-      print('📌 [4] تم تجهيز الطلب، انتظار الرد...');
-      
-      var response = await request.send();
-      print('📌 [5] تم استلام رد، رمز الحالة: ${response.statusCode}');
-      
-      var responseData = await response.stream.bytesToString();
-      print('📌 [6] محتوى الرد: $responseData');
-      
-      if (response.statusCode == 200) {
-        setState(() {
-          _result = json.decode(responseData);
-          _isLoading = false;
-        });
-        print('📌 [7] ✅ النتيجة: ${_result!['class']}');
-      } else {
-        throw Exception('خطأ في السيرفر: ${response.statusCode}');
-      }
-    } catch (e) {
-      print('📌 [❌] خطأ: $e');
+      final result = await ApiService.predictImage(_selectedImage!);
       setState(() {
-        _errorMessage = e.toString();
+        _result = result;
+        _isLoading = false;
+      });
+    } catch (e) {
+      setState(() {
+        _errorMessage = e.toString().replaceAll('Exception: ', '');
         _isLoading = false;
       });
     }
@@ -379,11 +329,11 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ],
                 ),
-                child: _selectedImageBytes != null
+                child: _selectedImage != null
                     ? ClipRRect(
                         borderRadius: BorderRadius.circular(20),
-                        child: Image.memory(
-                          _selectedImageBytes!,
+                        child: Image.file(
+                          _selectedImage!,
                           fit: BoxFit.contain,
                           width: double.infinity,
                         ),
