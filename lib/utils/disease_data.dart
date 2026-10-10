@@ -60,11 +60,10 @@ class DiseaseData {
     },
   ];
 
-  // معلومات التطبيق (معدلة حسب طلبك)
   static const Map<String, String> appInfo = {
     'name': 'كشف سرطان الجلد',
     'version': '1.0.0',
-    'developer': 'welliam Youssef  🔻',  // 👈 عدلت الاسم هنا
+    'developer': ' Youssef  ', 
     'description': 'تطبيق للكشف المبكر عن سرطان الجلد باستخدام الذكاء الاصطناعي',
     'supported_diseases': '7 أنواع',
   };
