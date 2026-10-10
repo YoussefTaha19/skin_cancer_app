@@ -1,103 +1,81 @@
-from flask import Flask, request, jsonify
-from flask_cors import CORS
-from tensorflow.keras.models import load_model
-from tensorflow.keras.applications.efficientnet import preprocess_input
-from PIL import Image, UnidentifiedImageError
-import numpy as np
 import io
 import os
 import logging
+import threading
 
-# ---------------------------
-# إعداد الـ logging (بدل print، وبيسجل الأخطاء الحقيقية سيرفر-سايد)
-# ---------------------------
+import numpy as np
+from flask import Flask, request, jsonify
+from flask_cors import CORS
+from PIL import Image, UnidentifiedImageError
+from ai_edge_litert.interpreter import Interpreter
+
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-# ---------------------------
-# إعداد المسارات (بات نسبي، يشتغل على أي جهاز/سيرفر)
-# ---------------------------
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-MODEL_PATH = os.path.join(BASE_DIR, "backups", "skin_ai_model_final.keras")
+MODEL_PATH = os.path.join(BASE_DIR, "model", "skin_ai_model.tflite")
 CLASS_NAMES = ['akiec', 'bcc', 'bkl', 'df', 'mel', 'nv', 'vasc']
-
-# حد أقصى لحجم الصورة المرفوعة (5 ميجا)
 MAX_IMAGE_SIZE = 5 * 1024 * 1024
 
-# ---------------------------
-# تحميل النموذج
-# ---------------------------
-logger.info("جاري تحميل النموذج...")
-model = load_model(MODEL_PATH)
-logger.info("النموذج جاهز!")
+logger.info("Loading TFLite model...")
+interpreter = Interpreter(model_path=MODEL_PATH)
+interpreter.allocate_tensors()
+INPUT = interpreter.get_input_details()[0]
+OUTPUT = interpreter.get_output_details()[0]
+_lock = threading.Lock()  # the interpreter is not thread-safe
+logger.info("Model ready.")
 
-# ---------------------------
-# إنشاء تطبيق Flask مع CORS
-# ---------------------------
 app = Flask(__name__)
 app.config['MAX_CONTENT_LENGTH'] = MAX_IMAGE_SIZE
 CORS(app)
 
-@app.route('/predict', methods=['POST', 'OPTIONS'])
-def predict():
-    if request.method == 'OPTIONS':
-        response = jsonify({'status': 'ok'})
-        response.headers.add('Access-Control-Allow-Origin', '*')
-        response.headers.add('Access-Control-Allow-Headers', 'Content-Type')
-        response.headers.add('Access-Control-Allow-Methods', 'POST')
-        return response
 
+def run_model(x):
+    with _lock:
+        interpreter.set_tensor(INPUT['index'], x)
+        interpreter.invoke()
+        return interpreter.get_tensor(OUTPUT['index'])[0].copy()
+
+
+@app.errorhandler(413)
+def too_large(_e):
+    return jsonify({'error': 'حجم الصورة كبير جداً (الحد الأقصى 5MB)'}), 413
+
+
+@app.route('/predict', methods=['POST'])
+def predict():
     try:
         if 'image' not in request.files:
-            response = jsonify({'error': 'لم يتم إرفاق صورة'})
-            response.headers.add('Access-Control-Allow-Origin', '*')
-            return response, 400
+            return jsonify({'error': 'لم يتم إرفاق صورة'}), 400
 
-        file = request.files['image']
-        img_bytes = file.read()
-
+        img_bytes = request.files['image'].read()
         try:
             img = Image.open(io.BytesIO(img_bytes)).convert('RGB')
         except UnidentifiedImageError:
-            response = jsonify({'error': 'الملف المرفوع ليس صورة صالحة'})
-            response.headers.add('Access-Control-Allow-Origin', '*')
-            return response, 400
+            return jsonify({'error': 'الملف المرفوع ليس صورة صالحة'}), 400
 
         img = img.resize((224, 224))
+        x = np.expand_dims(np.array(img, dtype=np.float32), axis=0)
 
-        img_array = np.array(img)
-        img_array = preprocess_input(img_array)
-        img_array = np.expand_dims(img_array, axis=0)
-
-        predictions = model.predict(img_array, verbose=0)[0]
-        predicted_class = CLASS_NAMES[np.argmax(predictions)]
-        confidence = float(np.max(predictions))
-
-        result = {
-            'class': predicted_class,
-            'confidence': confidence,
+        predictions = run_model(x)
+        idx = int(np.argmax(predictions))
+        return jsonify({
+            'class': CLASS_NAMES[idx],
+            'confidence': float(predictions[idx]),
             'all_probabilities': {
                 CLASS_NAMES[i]: float(predictions[i])
                 for i in range(len(CLASS_NAMES))
-            }
-        }
-
-        response = jsonify(result)
-        response.headers.add('Access-Control-Allow-Origin', '*')
-        return response
-
+            },
+        })
     except Exception as e:
-        # نسجل التفاصيل الحقيقية بالسيرفر فقط، ونرجع رسالة عامة للمستخدم
-        logger.error(f"خطأ أثناء معالجة الطلب: {e}", exc_info=True)
-        response = jsonify({'error': 'حدث خطأ أثناء تحليل الصورة، حاول مرة أخرى'})
-        response.headers.add('Access-Control-Allow-Origin', '*')
-        return response, 500
+        logger.error(f"Error while processing request: {e}", exc_info=True)
+        return jsonify({'error': 'حدث خطأ أثناء تحليل الصورة، حاول مرة أخرى'}), 500
+
 
 @app.route('/health', methods=['GET'])
 def health():
-    response = jsonify({'status': 'ok', 'model_loaded': True})
-    response.headers.add('Access-Control-Allow-Origin', '*')
-    return response
+    return jsonify({'status': 'ok', 'model_loaded': True})
+
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))

@@ -9,26 +9,21 @@ import random
 import pandas as pd
 from datetime import datetime
 
-# ---------------------------
 # إعدادات
-# ---------------------------
-SERVER_URL = "http://127.0.0.1:5000/predict"
-TEST_FOLDER = r"D:\Projects\skin_cancer_detector\assets\test_images\dataverse_files\ISIC2018_Task3_Test_Images"
 
-CSV_PATH = r"D:\Projects\skin_cancer_detector\assets\test_images\dataverse_files\ISIC2018_Task3_Test_GroundTruth.csv"
+SERVER_URL = "http://127.0.0.1:5000/predict"
+TEST_FOLDER = r"D:\Datasets\dataverse_files\ISIC2018_Task3_Test_Images"
+
+CSV_PATH = r"D:\Datasets\dataverse_files\ISIC2018_Task3_Test_GroundTruth.csv"
 CLASS_NAMES = ['akiec', 'bcc', 'bkl', 'df', 'mel', 'nv', 'vasc']
 
-# ---------------------------
-# تحميل التصنيفات الحقيقية
-# ---------------------------
 print("📊 جاري تحميل التصنيفات الحقيقية...")
 df = pd.read_csv(CSV_PATH)
 true_labels = dict(zip(df['image_id'], df['dx']))
 print(f"✅ تم تحميل {len(true_labels)} تصنيف")
 
-# ---------------------------
 # اختيار 20 صورة عشوائية
-# ---------------------------
+
 all_images = [f for f in os.listdir(TEST_FOLDER) if f.endswith('.jpg')]
 print(f"📸 إجمالي الصور: {len(all_images)}")
 
@@ -37,9 +32,8 @@ test_images = random.sample(all_images, min(20, len(all_images)))
 print(f"🔀 تم اختيار 20 صورة عشوائياً")
 print("="*70)
 
-# ---------------------------
 # الاختبار
-# ---------------------------
+
 results = []
 correct = 0
 
@@ -81,9 +75,8 @@ for i, img_file in enumerate(test_images, 1):
         else:
             print(f"   ❌ خطأ في السيرفر")
 
-# ---------------------------
 # النتائج النهائية
-# ---------------------------
+
 print("\n" + "="*70)
 print("📊 النتائج النهائية (مع التصنيفات الحقيقية)")
 print("="*70)
