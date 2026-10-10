@@ -33,7 +33,7 @@ class _CustomSplashScreenState extends State<CustomSplashScreen> {
           ),
         ),
         child: Center(
-          child: SingleChildScrollView(  // 👈 أضف هذا السطر
+          child: SingleChildScrollView(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -46,7 +46,7 @@ class _CustomSplashScreenState extends State<CustomSplashScreen> {
                     shape: BoxShape.circle,
                     boxShadow: [
                       BoxShadow(
-                        color: Colors.black.withOpacity(0.2),
+                        color: Colors.black.withValues(alpha:0.2),
                         blurRadius: 20,
                         spreadRadius: 5,
                       ),
@@ -67,7 +67,7 @@ class _CustomSplashScreenState extends State<CustomSplashScreen> {
                   ),
                 ),
                 const SizedBox(height: 30),
-                // اسم التطبيق
+
                 const Text(
                   'كشف سرطان الجلد',
                   style: TextStyle(
@@ -77,7 +77,7 @@ class _CustomSplashScreenState extends State<CustomSplashScreen> {
                   ),
                 ),
                 const SizedBox(height: 10),
-                // وصف
+
                 const Text(
                   'Skin Cancer Detector',
                   style: TextStyle(
@@ -86,13 +86,13 @@ class _CustomSplashScreenState extends State<CustomSplashScreen> {
                   ),
                 ),
                 const SizedBox(height: 50),
-                // مؤشر تحميل
+
                 const CircularProgressIndicator(
                   valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
                 ),
               ],
             ),
-          ), // 👈 أغلق SingleChildScrollView هنا
+          ), //
         ),
       ),
     );

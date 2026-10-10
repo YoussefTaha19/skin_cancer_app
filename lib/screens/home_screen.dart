@@ -26,7 +26,9 @@ class _HomeScreenState extends State<HomeScreen> {
         return AlertDialog(
           title: const Center(
             child: Text(
+
               'معلومات التطبيق',
+
               style: TextStyle(fontWeight: FontWeight.bold),
             ),
           ),
@@ -323,7 +325,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   borderRadius: BorderRadius.circular(20),
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.grey.withOpacity(0.3),
+                      color: Colors.grey.withValues(alpha: 0.3),
                       blurRadius: 10,
                       spreadRadius: 2,
                     ),
@@ -426,7 +428,7 @@ class _HomeScreenState extends State<HomeScreen> {
               Container(
                 padding: const EdgeInsets.all(16),
                 decoration: BoxDecoration(
-                  color: _getClassColor(_result!['class']).withOpacity(0.1),
+                  color: _getClassColor(_result!['class']).withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(20),
                   border: Border.all(
                     color: _getClassColor(_result!['class']),

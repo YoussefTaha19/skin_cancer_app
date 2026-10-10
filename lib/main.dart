@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'screens/custom_splash_screen.dart';  // 👈 استيراد شاشة الترحيب
+import 'screens/custom_splash_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         useMaterial3: true,
       ),
-      home: const CustomSplashScreen(),  // 👈 هنا التعديل: استخدم شاشة الترحيب
+      home: const CustomSplashScreen(),
     );
   }
 }
