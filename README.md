@@ -1,42 +1,27 @@
-# Skin Cancer Detection AI
+# Skin Lesion Classifier
 
-An AI-powered skin lesion classification application built with **Flutter, TensorFlow, EfficientNetB0, and Flask**. The system analyzes an uploaded skin lesion image and predicts one of seven skin lesion categories.
+[![Build Flutter APK](https://github.com/YoussefTaha19/skin_cancer_app/actions/workflows/build-apk.yml/badge.svg)](https://github.com/YoussefTaha19/skin_cancer_app/actions/workflows/build-apk.yml)
 
-> **Medical Disclaimer:** This project is for educational and research purposes only. It is not a medical diagnostic tool and must not replace professional medical advice, examination, or diagnosis.
+An Android app that classifies a photo of a skin lesion into one of seven categories, backed by a small Flask API running a TensorFlow Lite model (EfficientNetB0 fine-tuned on HAM10000).
 
-## Overview
+> **Medical disclaimer.** This is a learning / portfolio project, **not a medical device**. It must not be used for diagnosis or to make treatment decisions. See [Limitations](#limitations) for measured error rates.
 
-The application combines a Flutter user interface with a Python Flask backend and a deep learning image classification model.
+## How it works
 
-Users can select a skin lesion image, submit it for analysis, and receive the model's predicted category and confidence score.
+```
+Flutter app (Android)  --HTTPS, multipart image-->  Flask API (gunicorn)  -->  TFLite model
+   image_picker                /predict, /health        Pillow + numpy        EfficientNetB0
+```
 
-## Features
+- **App** (`lib/`): picks an image, uploads it to `/predict`, and shows the predicted class, its confidence and short information about the condition.
+- **API** (`backend/server.py`): validates the upload (max 5 MB, must be a valid image), resizes to 224x224, runs the TFLite interpreter and returns class probabilities.
+- **Model**: EfficientNetB0 trained on HAM10000 (see `notebooks/Skin_AI.ipynb`), converted to TFLite (float32, no quantization). The converted model matches the Keras model: max absolute difference 1.3e-5 and identical predicted class on 100/100 checked images (`backend/convert_to_tflite.py`).
 
-- Skin lesion image classification across seven categories.
-- Deep learning model based on EfficientNetB0.
-- Flutter application interface for Android and web.
-- Flask REST API for model inference.
-- Image preprocessing and prediction response handling.
+### Classes
 
-## Technology Stack
-
-| Component | Technology |
+| Code | Meaning |
 |---|---|
-| Mobile and web UI | Flutter, Dart |
-| Deep learning | TensorFlow, Keras |
-| Model architecture | EfficientNetB0 |
-| Backend API | Python, Flask, Flask-CORS |
-| Image processing | Pillow |
-
-| Training dataset | HAM10000 |
-
-## Model Information
-
-The model was trained on the HAM10000 skin lesion dataset and configured to classify images into seven categories.
-
-| Label | Category |
-|---|---|
-| `akiec` | Actinic keratoses and intraepithelial carcinoma |
+| `akiec` | Actinic keratoses / intraepithelial carcinoma |
 | `bcc` | Basal cell carcinoma |
 | `bkl` | Benign keratosis-like lesions |
 | `df` | Dermatofibroma |
@@ -44,128 +29,105 @@ The model was trained on the HAM10000 skin lesion dataset and configured to clas
 | `nv` | Melanocytic nevi |
 | `vasc` | Vascular lesions |
 
-The model uses a 224 × 224 RGB image input and produces scores for the seven classes.
+## Measured performance
 
-**Reported evaluation result:** 71.21% accuracy on ISIC 2018. This figure should be interpreted in the context of the specific evaluation setup and dataset; it does not establish clinical reliability.
+Evaluated with `backend/evaluate.py` on the HAM10000 / ISIC 2018 Task 3 test set: **1,511 images** (one listed image file was missing). Full report: [`backend/evaluation_report.md`](backend/evaluation_report.md).
 
-## Project Structure
+| Metric | Value |
+|---|---|
+| Accuracy | 70.0% |
+| Balanced accuracy (mean recall) | 70.3% |
+| Majority-class baseline (always `nv`) | 60.1% |
+| Melanoma sensitivity / specificity (vs. rest) | 65.5% / 86.1% |
 
-```text
-skin_cancer_app/
-├── android/
-├── ios/
-├── lib/
-│   ├── main.dart
-│   ├── screens/
-│   │   ├── custom_splash_screen.dart
-│   │   └── home_screen.dart
-│   ├── services/
-│   │   └── api_service.dart
-│   └── utils/
-│       └── disease_data.dart
-├── backend/
-│   ├── server.py
-│   ├── test_api.py
-│   ├── requirements.txt
-│   └── backups/
-│       └── skin_ai_model_final.keras
-├── notebooks/
-│   └── Skin_AI.ipynb
-├── test/
-├── pubspec.yaml
-├── pubspec.lock
-├── .gitignore
-└── README.md
-```
-
-The trained model file is excluded from Git because of its size. The local `backend/backups/` directory is not included in the repository.
-
-## Requirements
-
-- Flutter SDK and Dart.
-- Python 3.9 or a compatible Python environment.
-- The dependencies listed in `backend/requirements.txt`.
-- The trained model file at `backend/backups/skin_ai_model_final.keras`.
-
-TensorFlow installation compatibility depends on the operating system, Python version, and available hardware.
-
-## Run the Backend
-
-From the project root, create and activate a Python virtual environment:
-
-```powershell
-python -m venv .venv
-.\.venv\Scripts\Activate.ps1
-```
-
-Install backend dependencies:
-
-```powershell
-python -m pip install -r backend/requirements.txt
-```
-
-Ensure the trained model exists at:
-
-```text
-backend/backups/skin_ai_model_final.keras
-```
-
-Start the API:
-
-```powershell
-python backend/server.py
-```
-
-The local API uses port `5000` by default.
-
-### API Endpoints
-
-| Method | Endpoint | Purpose |
-|---|---|---|
-| `GET` | `/health` | Check backend and model status |
-| `POST` | `/predict` | Submit an image for classification |
-
-The prediction endpoint accepts a multipart form upload using the field name `image`.
-
-## Run the Flutter Application
-
-Install Flutter dependencies:
-
-```powershell
-flutter pub get
-```
-
-Run the application:
-
-```powershell
-flutter run
-```
-
-The API base URL is configured in `lib/services/api_service.dart`. Update it to the correct backend address for your environment.
-
-For Android devices, the backend must be reachable from the device. The address `127.0.0.1` refers to the device itself, not your computer, unless you configure an appropriate emulator or network mapping.
-
-## Model Deployment
-
-The trained `.keras` model is intentionally excluded from the Git repository. Before deploying the backend, provide the model through a suitable secure artifact or model-storage solution and configure the backend to load it from the deployment environment.
-
-Do not commit large model files, credentials, or environment-specific configuration unnecessarily.
+| Class | Support | Precision | Recall | F1 |
+|---|---|---|---|---|
+| akiec | 43 | 31.5% | 79.1% | 45.0% |
+| bcc | 93 | 58.3% | 72.0% | 64.4% |
+| bkl | 217 | 63.5% | 60.8% | 62.1% |
+| df | 44 | 64.8% | 79.5% | 71.4% |
+| mel | 171 | 37.6% | 65.5% | 47.8% |
+| nv | 908 | 94.0% | 72.3% | 81.7% |
+| vasc | 35 | 73.3% | 62.9% | 67.7% |
 
 ## Limitations
 
-- Performance depends on the training data, evaluation methodology, image quality, and distribution of real-world images.
-- A predicted class and confidence score are not equivalent to a medical diagnosis.
-- The model may perform differently on images from populations, devices, or settings not represented in its training and evaluation data.
-- Clinical use would require appropriate validation, governance, and regulatory review.
+- **About one third of melanomas are missed** (59 of 171 test cases), mostly predicted as `nv`, `akiec` or `bkl`.
+- **Many false alarms:** 140 of 908 benign nevi were predicted as melanoma, so melanoma precision is only 37.6%.
+- Rare classes (`akiec`, `mel`) have recall higher than precision, i.e. the model over-predicts them.
+- Trained and tested on dermoscopic images from one benchmark. Phone photos taken in everyday conditions are a different distribution, and no evaluation on such images has been done.
+- No authentication or rate limiting on the API; it is intended for personal use.
 
-## Future Improvements
+## Repository layout
 
-- Improve evaluation using class-wise precision, recall, F1-score, and a confusion matrix.
-- Expand testing on independent datasets.
-- Improve API deployment and configuration management.
-- Add automated tests and continuous integration.
-- Improve accessibility, usability, and error handling in the application.
+```
+lib/                  Flutter app (screens, API client, condition info)
+android/              Android project
+backend/
+  server.py           Flask API (TFLite inference)
+  model/              skin_ai_model.tflite (deployed model)
+  convert_to_tflite.py   Keras -> TFLite conversion + parity check
+  evaluate.py         Full test-set evaluation -> evaluation_report.md
+  test_api.py         Smoke test against a running server
+  requirements.txt    Runtime dependencies
+  requirements-train.txt  TensorFlow/Keras dependencies (conversion, notebook)
+notebooks/Skin_AI.ipynb   Training notebook
+```
 
-## License
+The original Keras model (`backend/backups/*.keras`) and the datasets are **not** in the repository.
 
-Add a license before distributing or reusing this project. Until a license is specified, do not assume that the repository grants permission to reuse its contents.
+## Run the API locally
+
+Python 3.11 is recommended (the `ai-edge-litert` wheel is not available for Python 3.9 on Windows).
+
+```bash
+cd backend
+python -m venv .venv
+# Windows: .venv\Scripts\activate    Linux/macOS: source .venv/bin/activate
+pip install -r requirements.txt
+python server.py                  # http://127.0.0.1:5000
+```
+
+```bash
+curl http://127.0.0.1:5000/health
+curl -F "image=@lesion.jpg" http://127.0.0.1:5000/predict
+```
+
+`/predict` returns:
+
+```json
+{
+  "class": "nv",
+  "confidence": 0.99,
+  "all_probabilities": { "akiec": 0.0, "bcc": 0.0, "bkl": 0.0, "df": 0.0, "mel": 0.0, "nv": 0.99, "vasc": 0.0 }
+}
+```
+
+For production use `gunicorn server:app --workers 1 --timeout 120 --bind 0.0.0.0:$PORT`. One worker is enough and keeps memory low (about 100 MB measured).
+
+## Run the Android app
+
+Requires Flutter (developed with 3.44.4) and an Android device or emulator.
+
+1. Set the API address in `lib/services/api_service.dart` (`baseUrl`). For an emulator talking to a local server use `http://10.0.2.2:5000`.
+2. Build and run:
+
+```bash
+flutter pub get
+flutter run --release
+```
+
+## Deployment notes
+
+The API is deployed on Render's free tier from the `backend/` directory (build: `pip install -r requirements.txt`, start: the gunicorn command above, env `PYTHON_VERSION=3.11.9`). The free tier sleeps after about 15 minutes of inactivity, so the first request afterwards can take around a minute. The public URL is intentionally not listed here.
+
+TensorFlow was dropped from the runtime because it needed about 750 MB of RAM; TFLite via `ai-edge-litert` needs about 100 MB.
+
+## Reproduce the evaluation
+
+Download the HAM10000 test images and metadata CSV (`ISIC2018_Task3_Test_Images/` and `ISIC2018_Task3_Test_GroundTruth.csv`), then:
+
+```bash
+export ISIC_DATASET_DIR=/path/to/dataset     # PowerShell: $env:ISIC_DATASET_DIR="D:\Datasets\dataverse_files"
+python backend/evaluate.py
+```
