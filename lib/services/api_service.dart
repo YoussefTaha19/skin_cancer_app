@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:http/http.dart' as http;
 
 class ApiService {
-  static const String baseUrl = 'http://192.168.109.224:5000';
+  static const String baseUrl = 'https://skin-cancer-api-d5j6.onrender.com';
 
   static Future<Map<String, dynamic>> predictImage(File imageFile) async {
     try {
