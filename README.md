@@ -131,3 +131,14 @@ Download the HAM10000 test images and metadata CSV (`ISIC2018_Task3_Test_Images/
 export ISIC_DATASET_DIR=/path/to/dataset     # PowerShell: $env:ISIC_DATASET_DIR="D:\Datasets\dataverse_files"
 python backend/evaluate.py
 ```
+
+## License and data
+
+All rights reserved. This repository is shared for portfolio and review purposes; no permission is granted to copy, modify or redistribute the code or model without the author's consent.
+
+**Data and model.** The model was trained on HAM10000 and evaluated on the ISIC 2018 Task 3 test set. These datasets are distributed under [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) (non-commercial, attribution required). The datasets are not included in this repository. The trained model is provided for educational and research use only, not for commercial or clinical use.
+
+**Credits**
+- Tschandl P., Rosendahl C., Kittler H. *The HAM10000 dataset, a large collection of multi-source dermatoscopic images of common pigmented skin lesions.* Sci. Data 5, 180161 (2018).
+- Tschandl P. et al. *Human-computer collaboration for skin cancer recognition.* Nat. Med. 26, 1229-1234 (2020).
+- Codella N. et al. *Skin Lesion Analysis Toward Melanoma Detection 2018: A Challenge Hosted by the International Skin Imaging Collaboration (ISIC).* arXiv:1902.03368 (2019).
